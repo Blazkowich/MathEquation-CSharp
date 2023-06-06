@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        UserInteractionHelper.GetInputAndResult();
+        UserInteractionHelper UserHelper = new();
+
+        UserHelper.GetInput();
+        UserHelper.GetResult();
     }
 }
