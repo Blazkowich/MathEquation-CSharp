@@ -2,18 +2,18 @@ using System;
 
 public class EquationHelper
 {
+    
     public static string SolveQuadraticEquation(double a, double b, double c)
     {
         double discriminant = b * b - 4 * a * c;
 
         if (discriminant > 0)
         {
-            return TwoSolutionResult((-b + Math.Sqrt(discriminant)) / (2 * a),
-                (-b - Math.Sqrt(discriminant)) / (2 * a));
+            return TwoSolutionResult(a, b, discriminant);
         }
         else if (discriminant == 0)
         {
-            return OneSolutionResult(-b / (2 * a));
+            return OneSolutionResult(a, b);
         }
         else
         {
@@ -21,13 +21,17 @@ public class EquationHelper
         }
     }
 
-    public static string TwoSolutionResult(double x1, double x2)
+    public static string TwoSolutionResult(double a, double b, double disc)
     {
-        return $"The Equation has Two Solutins x1 = {x1}, x2 = {x2}";
+        double x1 = (-b + Math.Sqrt(disc)) / (2 * a);
+        double x2 = (-b - Math.Sqrt(disc)) / (2 * a);
+
+        return $"The Equation has Two Solutins x1 = {Math.Round(x1,2)}, x2 = {Math.Round(x2,2)}";
     }
 
-    private static string OneSolutionResult(double x)
+    private static string OneSolutionResult(double a, double b)
     {
+        double x = -b / (2 * a);
         return $"The Equation Has One Solution x = {x}";
     }
 
