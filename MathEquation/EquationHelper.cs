@@ -6,7 +6,7 @@ public class EquationHelper
     public static string SolveQuadraticEquation(double a, double b, double c)
     {
         double discriminant = b * b - 4 * a * c;
-
+        Console.WriteLine("\nDiscriminant is: " + discriminant+"\n");
         if (discriminant > 0)
         {
             return TwoSolutionResult(a, b, discriminant);
