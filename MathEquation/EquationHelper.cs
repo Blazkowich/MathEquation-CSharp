@@ -1,25 +1,38 @@
-﻿using System;
+using System;
 
 public class EquationHelper
 {
-    public static void SolveQuadraticEquation(double a, double b, double c)
+    public static string SolveQuadraticEquation(double a, double b, double c)
     {
         double discriminant = b * b - 4 * a * c;
 
         if (discriminant > 0)
         {
-            double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
-            double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
-            Console.WriteLine($"The quadratic equation has two solutions: x1 = {x1}, x2 = {x2}");
+            return TwoSolutionResult((-b + Math.Sqrt(discriminant)) / (2 * a),
+                (-b - Math.Sqrt(discriminant)) / (2 * a));
         }
         else if (discriminant == 0)
         {
-            double x = -b / (2 * a);
-            Console.WriteLine($"The quadratic equation has one solution: x = {x}");
+            return OneSolutionResult(-b / (2 * a));
         }
         else
         {
-            Console.WriteLine("The quadratic equation has no real solutions");
+            return NoSolutionResult();
         }
+    }
+
+    public static string TwoSolutionResult(double x1, double x2)
+    {
+        return $"The Equation has Two Solutins x1 = {x1}, x2 = {x2}";
+    }
+
+    private static string OneSolutionResult(double x)
+    {
+        return $"The Equation Has One Solution x = {x}";
+    }
+
+    private static string NoSolutionResult()
+    {
+        return $"The Equation Has Not a Solution";
     }
 }
