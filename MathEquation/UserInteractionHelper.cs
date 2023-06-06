@@ -3,9 +3,10 @@ using System;
 public class UserInteractionHelper
 {
 
-    public double a { get; set; }
-    public double b { get; set; }
-    public double c { get; set; }
+    public double a;
+    public double b;
+    public double c;
+
     public static double GetCoefficient(string coefficientName)
     {
         double coefficient;
@@ -27,10 +28,10 @@ public class UserInteractionHelper
     }
 
     public void GetInput()
-    {
+    {    
         a = GetCoefficient("A");
         b = GetCoefficient("B");
-        c = GetCoefficient("C");
+        c = GetCoefficient("C");   
     }
 
     public void GetResult()
