@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class UserInteractionHelper
 {
@@ -20,5 +20,14 @@ public class UserInteractionHelper
         } while (!isValid);
 
         return coefficient;
+    }
+
+    public static void GetInputAndResult()
+    {
+        double a = GetCoefficient("A");
+        double b = GetCoefficient("B");
+        double c = GetCoefficient("C");
+
+        Console.WriteLine(EquationHelper.SolveQuadraticEquation(a, b, c));
     }
 }
