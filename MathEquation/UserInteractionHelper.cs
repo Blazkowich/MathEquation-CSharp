@@ -2,6 +2,10 @@ using System;
 
 public class UserInteractionHelper
 {
+
+    public double a { get; set; }
+    public double b { get; set; }
+    public double c { get; set; }
     public static double GetCoefficient(string coefficientName)
     {
         double coefficient;
@@ -22,12 +26,18 @@ public class UserInteractionHelper
         return coefficient;
     }
 
-    public static void GetInputAndResult()
+    public void GetInput()
     {
-        double a = GetCoefficient("A");
-        double b = GetCoefficient("B");
-        double c = GetCoefficient("C");
+        
+        a = GetCoefficient("A");
+        b = GetCoefficient("B");
+        c = GetCoefficient("C");
 
+        
+    }
+
+    public void GetResult()
+    {
         Console.WriteLine(EquationHelper.SolveQuadraticEquation(a, b, c));
     }
 }
