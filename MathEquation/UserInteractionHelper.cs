@@ -28,12 +28,9 @@ public class UserInteractionHelper
 
     public void GetInput()
     {
-        
         a = GetCoefficient("A");
         b = GetCoefficient("B");
         c = GetCoefficient("C");
-
-        
     }
 
     public void GetResult()
